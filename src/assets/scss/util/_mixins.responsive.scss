@@ -1,0 +1,73 @@
+/* Mixin */
+/* Set by device */
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width} - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width} - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+/* Set by prefix */
+$XS: 480px;
+$SM: 650px;
+$MD: 750px;
+$LG: 950px;
+$XL: 1400px;
+
+@mixin breakpoint($prefix) {
+  @if $prefix == XS or $prefix == xs {
+    @media only screen and (max-width: $XS) {
+      @content;
+    }
+  } @else if $prefix == SM or $prefix == sm {
+    @media only screen and (max-width: $SM) {
+      @content;
+    }
+  } @else if $prefix == MD or $prefix == md {
+    @media only screen and (max-width: $MD) {
+      @content;
+    }
+  } @else if $prefix == LG or $prefix == lg {
+    @media only screen and (max-width: $MD) {
+      @content;
+    }
+  } @else if $prefix == XL or $prefix == xl {
+    @media only screen and (max-width: $XL) {
+      @content;
+    }
+  }
+}
+
+/* Custom by input */
+@mixin media-min($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin media-between($min-width, $max-width) {
+  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin media-min($max-width) {
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}

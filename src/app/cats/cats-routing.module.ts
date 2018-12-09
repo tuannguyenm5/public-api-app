@@ -3,21 +3,32 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {ListCatsComponent} from './list-cats/list-cats.component';
 import {DetailCatsComponent} from './cat/detail-cats.component';
+import {ROUTER} from '../shared/constants/router.const';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ListCatsComponent
+    path: ROUTER.cats.index.path,
+    component: ListCatsComponent,
+    data: {
+      title: ROUTER.cats.index.title,
+      action: ROUTER.cats.index.action
+    }
   },
   {
-    path: '/detail/:id',
+    path: ROUTER.cats.detail.path,
     component: DetailCatsComponent,
-    data: {a: 'detail'}
+    data: {
+      title: ROUTER.cats.detail.title,
+      action: ROUTER.cats.detail.action
+    }
   },
   {
-    path: '/new',
+    path: ROUTER.cats.new.path,
     component: DetailCatsComponent,
-    data: {a: 'new'}
+    data: {
+      title: ROUTER.cats.new.title,
+      action: ROUTER.cats.new.action
+    }
   }
 ];
 

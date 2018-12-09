@@ -1,0 +1,373 @@
+@import "~src/assets/scss/variables/color";
+@import "~src/assets/scss/util/mixins.responsive";
+
+html, body {
+  overflow: hidden;
+  @include breakpoint(md){
+    max-height: 100vh;
+  }
+}
+
+body {
+  background: $not-found-bg-color;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  color: $black-color;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+:focus {
+  outline: 0;
+}
+
+html, div, span, h1, ul, li, form, input {
+  outline: 0;
+  background: transparent;
+}
+
+.error {
+  min-height: 100vh;
+  position: relative;
+  padding: 240px 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 20px;
+  overflow: hidden;
+  max-height: 100vh;
+  @include breakpoint(md){
+    padding-top: 0;
+    padding-bottom: 100px;
+    height: 100vh;
+  }
+  .error__content {
+    position: absolute;
+    top: 50%;
+    @include breakpoint(xl){
+      top: 55%;
+    }
+    @include breakpoint(md){
+      position: static;
+      margin: 0 auto;
+      transform: none;
+      padding-top: 300px;
+    }
+    @include breakpoint(sm) {
+      padding-top: 120px;
+    }
+    @include breakpoint(xs) {
+      padding-top: 100px;
+    }
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .error__message {
+      text-align: center;
+      color: $white-color;
+      .message__title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 5.6rem;
+        @include breakpoint(xl) {
+          font-size: 4.5rem;
+        }
+        @include breakpoint(lg) {
+          font-size: 48px;
+        }
+        @include breakpoint(sm) {
+          font-size: 36px;
+          padding-bottom: 20px;
+        }
+        @include breakpoint(xs) {
+          font-size: 30px;
+        }
+        padding-bottom: 40px;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .message__text {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 42px;
+        font-size: 18px;
+        padding: 0 60px;
+        max-width: 920px;
+        margin: auto;
+        @include breakpoint(sm) {
+          font-size: 16px;
+          line-height: 2;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        @include breakpoint(xs) {
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 15px;
+        }
+      }
+    }
+    .error__nav {
+      max-width: 600px;
+      margin: 40px auto 0;
+      text-align: center;
+      @include breakpoint(xs) {
+        margin-top: 20px;
+      }
+      .e-nav__form {
+        position: relative;
+        height: 45px;
+        overflow: hidden;
+        width: 170px;
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid $white-color;
+        padding-left: 10px;
+        padding-right: 46px;
+        @include breakpoint(xs) {
+          height: 38px;
+          line-height: 36px;
+        }
+        .icon-search:before {
+          content: "\e986";
+        }
+        .e-nav__icon {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          color: $gray-light-color;
+          -webkit-transition: color .25s ease;
+          transition: color .25s ease;
+        }
+        .e-nav__search {
+          display: block;
+          width: 100%;
+          color: $white-color;
+          font-size: 11px;
+          line-height: 45px;
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: .1rem;
+          &::-webkit-input-placeholder {
+            color: $gray-light-color;
+            -webkit-transition: color .25s ease;
+            transition: color .25s ease;
+          }
+        }
+        .e-nav__search:hover + .e-nav__icon,
+        .e-nav__search:focus + .e-nav__icon, .e-nav__search:focus::-webkit-input-placeholder, .e-nav__search:hover::-webkit-input-placeholder {
+          color: $white-color;
+        }
+      }
+      .e-nav__link {
+        height: 45px;
+        line-height: 45px;
+        width: 170px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 15px;
+        border: 1px solid $white-color;
+        color: $white-color;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: .1rem;
+        position: relative;
+        overflow: hidden;
+        @include breakpoint(xs) {
+          height: 38px;
+          line-height: 36px;
+          display: block;
+          margin: 0 auto 15px;
+        }
+        &:before {
+          content: '';
+          height: 200px;
+          background: $white-color;
+          position: absolute;
+          top: 70px;
+          right: 70px;
+          width: 260px;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+          -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+        }
+        &:after {
+          -webkit-transition: all .3s;
+          transition: all .3s;
+          z-index: 999;
+          position: relative;
+          content: "Home Page";
+        }
+        &:hover {
+          &:before {
+            top: -60px;
+            right: -50px;
+          }
+          &:after {
+            color: $black-color;
+          }
+        }
+        &:nth-child(2):hover:after {
+          color: $white-color;
+        }
+      }
+    }
+  }
+  .error__social {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 20px;
+    @include breakpoint(lg) {
+      bottom: 30px;
+      top: auto;
+      transform: none;
+      width: 100%;
+      position: fixed;
+      left: 0;
+    }
+    .e-social__list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      .e-social__icon {
+        padding-bottom: 30px;
+        @include breakpoint(lg) {
+          display: inline-block;
+          padding-right: 30px;
+          padding-bottom: 0;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .e-social__link {
+          color: $white-color;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease;
+          display: block;
+          .icon-google-plus:before {
+            content: "\ea8b";
+          }
+          .icon-facebook:before {
+            content: "\ea90";
+          }
+          .icon-twitter:before {
+            content: "\ea96";
+          }
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lamp {
+  @include breakpoint(xl) {
+    zoom: .7;
+  }
+  @include breakpoint(sm) {
+    zoom: .45;
+  }
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center top;
+  animation-timing-function: cubic-bezier(0.6, 0, 0.38, 1);
+  animation: move 5.1s infinite;
+  @keyframes move {
+    0% {
+      transform: rotate(40deg);
+    }
+    50% {
+      transform: rotate(-40deg);
+    }
+    100% {
+      transform: rotate(40deg);
+    }
+  }
+  .cable {
+    width: 4px;
+    height: 200px;
+    background: $white-color;
+    @include breakpoint(xs) {
+      height: 120px;
+    }
+  }
+  .cover {
+    width: 200px;
+    height: 80px;
+    background: $not-found-bg-cover-color;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    position: relative;
+    z-index: 200;
+  }
+  .in-cover {
+    width: 100%;
+    max-width: 200px;
+    height: 20px;
+    border-radius: 100%;
+    background: $not-found-bg-in-cover-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -9px;
+    z-index: 100;
+    .bulb {
+      width: 50px;
+      height: 50px;
+      background: $not-found-bg-bulb-color;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -20px;
+      margin: 0 auto;
+    }
+  }
+  .light {
+    width: 200px;
+    height: 0;
+    border-bottom: 900px solid $not-found-border-bottom-light-color;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 270px;
+    margin: 0 auto;
+    z-index: 1;
+    @include breakpoint(xs) {
+      top: 200px;
+    }
+  }
+}

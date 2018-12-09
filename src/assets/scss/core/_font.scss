@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@font-face {
+  font-family: 'icomoon';
+  src: url("~src/assets/fonts/icomoon.eot?nlzupy");
+  src: url("~src/assets/fonts/icomoon.eot?nlzupy#iefix") format("embedded-opentype"), url("~src/assets/fonts/icomoon.ttf?nlzupy") format("truetype"), url("~src/assets/fonts/icomoon.woff?nlzupy") format("woff"), url("~src/assets/fonts/icomoon.svg?nlzupy#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

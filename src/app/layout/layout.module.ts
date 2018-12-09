@@ -5,13 +5,15 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import {LayoutRoutingModule} from './layout-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    NotFoundComponent
   ],
   imports: [
     LayoutRoutingModule,
