@@ -7,9 +7,7 @@ const routes: Routes = [
   {
     path: ROUTER.dashBoard.path,
     component: DashboardComponent,
-    data: {
-      title: ROUTER.dashBoard.title
-    }
+    data: ROUTER.dashBoard.data
   }
 ];
 

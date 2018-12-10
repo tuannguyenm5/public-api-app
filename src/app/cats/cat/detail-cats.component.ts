@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-detail-cats',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-cats.component.scss']
 })
 export class DetailCatsComponent implements OnInit {
-
-  constructor() { }
+  task: string;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.task = this.route.snapshot.params.id ? 'detail' : 'create-detail';
   }
 
 }

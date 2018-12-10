@@ -7,28 +7,24 @@ import {ROUTER} from '../shared/constants/router.const';
 
 const routes: Routes = [
   {
-    path: ROUTER.cats.index.path,
+    path: '',
+    redirectTo: ROUTER.cats.list.path,
+    pathMatch: 'full'
+  },
+  {
+    path: ROUTER.cats.list.path,
     component: ListCatsComponent,
-    data: {
-      title: ROUTER.cats.index.title,
-      action: ROUTER.cats.index.action
-    }
+    data: ROUTER.cats.list.data
   },
   {
     path: ROUTER.cats.detail.path,
     component: DetailCatsComponent,
-    data: {
-      title: ROUTER.cats.detail.title,
-      action: ROUTER.cats.detail.action
-    }
+    data: ROUTER.cats.detail.data
   },
   {
     path: ROUTER.cats.new.path,
     component: DetailCatsComponent,
-    data: {
-      title: ROUTER.cats.new.title,
-      action: ROUTER.cats.new.action
-    }
+    data: ROUTER.cats.new.data
   }
 ];
 

@@ -1,3 +1,10 @@
-<p>
-  list-cats works!
-</p>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <p>
+    list-cats works!
+  </p>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <a [routerLink]="links.cats.new.link">{{links.cats.new.name}}</a>
+    <a [routerLink]="[links.cats.detail.link, 1]">{{links.cats.detail.name}}</a>
+  </div>
+</div>

@@ -7,7 +7,7 @@ import {ROUTER} from '../shared/constants/router.const';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: ROUTER.dashBoard.path,
     pathMatch: 'full'
   },
   {
@@ -15,25 +15,23 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: 'dashboard',
+        path: ROUTER.dashBoard.pathModule,
         loadChildren: '../dashboard/dashboard.module#DashboardModule'
       },
       {
-        path: 'cats',
+        path: ROUTER.cats.pathModule,
         loadChildren: '../cats/cats.module#CatsModule'
       }
     ]
   },
   {
     path: '**',
-    redirectTo: '/404'
+    redirectTo: ROUTER.notFound.path
   },
   {
     path: ROUTER.notFound.path,
     component: NotFoundComponent,
-    data: {
-      title: ROUTER.notFound.title
-    }
+    data: ROUTER.notFound.data
   }
 ];
 

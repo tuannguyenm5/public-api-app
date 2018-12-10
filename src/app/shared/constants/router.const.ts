@@ -1,27 +1,48 @@
 export const ROUTER = {
   notFound: {
     path: '404',
-    title: 'Not Found'
+    link: '/404',
+    name: 'Not Found',
+    data: {
+      title: 'Not Found'
+    }
   },
   dashBoard: {
-    path: '',
-    title: 'Home'
+    pathModule: '',
+    link: '/dashboard',
+    path: 'dashboard',
+    name: 'Dashboard',
+    data: {
+      title: 'Dashboard'
+    }
   },
   cats: {
-    index: {
-      path: '',
-      title: 'List Cats Detail',
-      action: 'list'
+    pathModule: 'cats',
+    nameModule: 'Cats',
+    linkModule: '/cats',
+    list: {
+      path: 'list',
+      link: '/cats/list',
+      name: 'List Cats Detail',
+      data: {
+        title: 'List Cats Detail'
+      },
     },
     detail: {
-      path: '/detail/:id',
-      title: 'Cat Detail',
-      action: 'detail'
+      path: 'detail/:id',
+      link: '/cats/detail',
+      name: 'Cat Detail',
+      data: {
+        title: 'Cat Detail'
+      }
     },
     new: {
-      path: '/new',
-      title: 'Create Cat Detail',
-      action: 'new'
+      path: 'new',
+      link: '/cats/new',
+      name: 'Create Cat Detail',
+      data: {
+        title: 'Create Cat Detail'
+      }
     }
   }
 };
